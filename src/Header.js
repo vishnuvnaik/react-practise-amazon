@@ -7,6 +7,7 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 function Header() {
   const [{ basket, user }] = useStateValue();
+ 
   const handleAuthenticaton = () => {
     if (user) {
       auth.signOut();

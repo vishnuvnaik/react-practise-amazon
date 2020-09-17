@@ -10,9 +10,11 @@ import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-const promise = loadStripe("");
+const promise = loadStripe(
+  "pk_test_51HREApEUbtJ49GG1nvuH87bmeND3TidSq7KWrd2FxXdvV975DfvQgPZKYyHcPBIZeNJnAvjL29TiLAVcHunP7HfL00nYRmUaTE"
+);
 function App() {
-  const [dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   useEffect(() => {
     //will only run once when the app component loads...
     auth.onAuthStateChanged((authUser) => {
